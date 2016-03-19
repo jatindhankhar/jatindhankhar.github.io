@@ -52,7 +52,7 @@
 ================================================== */
 	body {
 		background: #fff;
-		font: 14px/21px "Raleway" "HelveticaNeue-Light", Arial, sans-serif;
+		font: 14px/21px "Raleway" , "HelveticaNeue-Light", Arial, sans-serif;
 		color: #444;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: 100%;
@@ -504,33 +504,33 @@ html { box-sizing: border-box; }
 
 /* ----- per-post colors! ----- */
 
-  
-  
-  
+
+
+
   nav .p-contact { border-color: #c869bf; }
   #contact { background-color: #c869bf !important; color: #f8f8f8; }
   #contact a { color: #f8f8f8; }
   #contact .sectiondivider { color: #c869bf; }
 
-  
-  
-  
+
+
+
   nav .p-skills { border-color: #63BD2F; }
   #skills { background-color: #63BD2F !important; color: #111111; }
   #skills a { color: #111111; }
   #skills .sectiondivider { color: #63BD2F; }
 
-  
-  
-  
+
+
+
   nav .p-about { border-color: #49a7e9; }
   #about { background-color: #49a7e9 !important; color: #f8f8f8; }
   #about a { color: #f8f8f8; }
   #about .sectiondivider { color: #49a7e9; }
 
-  
-  
-  
+
+
+
   nav .p-intro { border-color: #f8f8f8; }
   #intro { background-color: #f8f8f8 !important; color: #111111; }
   #intro a { color: #111111; }
@@ -870,4 +870,3 @@ nav ul li:hover, nav ul li.active {
     column-count:         2;
   }
 }
-

@@ -2,14 +2,14 @@
 
 title:            Weblog of JD
 locale:           en_US
-url:              
+url:
 
 
 # Jekyll configuration
 
 permalink:   /:categories/:title/
 markdown:    kramdown
-highlighter: pygments
+highlighter: rouge
 sass:
   sass_dir: _sass
   style: compressed
@@ -31,17 +31,17 @@ owner:
   name: Jatin Dhankhar
   avatar: bio-photo.jpg
   bio: "Reader | Coder | Learner."
-  email: 
+  email:
   disqus-shortname: weblogofjd
   twitter: jatindhankhar_
   facebook: #username
   google:
     plus: JatinDhankhar
-    analytics: UA-50753070-1 
-    verify: 
-    ad-client: 
-    ad-slot: 
-  bing-verify: 
+    analytics: UA-50753070-1
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
   github: jatindhankhar
   stackoverflow: http://stackoverflow.com/users/3455743/jatin-dhankhar
   keybase: jatin

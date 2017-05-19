@@ -2,16 +2,13 @@
 title: GSOC Sugar Labs - Week 1
 layout: post
 categories: blog/
-excerpt: Week 1 of GSOC with Sugar Labs
-tags:
-- programming
-- gsoc
-- sugar_labs
+excerpt: 'GSOC Suar Labs - Week 1 '
+tags: [programming,sugar labs,gsoc]
 comments: true
-description: Week 1 of GSOC with Sugar Labs
+description: 'GSOC Suar Labs - Week 1 '
 ---
 
-This year I got the oppurtunity to participate in Google Summer of Code (GSOC) along with many students around the world and I will be working with [Sugar Labs](https://www.sugarlabs.org/), they are an awesome organization and make tools which help students in learning. Do check them out and contribute with them. [My proposal](https://summerofcode.withgoogle.com/projects/#4987332267606016) is to  help maintain and revamp the existing  [Software store](https://activities.sugarlabs.org/en-US/sugar/), also known as ASLO. Since it's the main point to explore additonals tools for Sugar, I consider it one of the important projects and I am glad and excited to work on such a big and important project. 
+This year I got the oppurtunity to participate in Google Summer of Code (GSOC) along with many students around the world and I will be working with [Sugar Labs](https://www.sugarlabs.org/), they are an awesome organization and make tools which help students in learning. Do check them out and contribute with them. [My proposal](https://summerofcode.withgoogle.com/projects/#4987332267606016) is to  help maintain and revamp the existing  [Software store](https://activities.sugarlabs.org/en-US/sugar/), also known as ASLO. Since it's the main point to explore additonals tools for Sugar, I consider it one of the important projects and I am glad and excited to work on such a big and important project.
 I intend to blog my experience and summary of each week. I am extremely grateful to Walter Bender and Tony Anderson for helping me out with the proposal and giving valuable suggestions through the whole process.
 
 ## Weekly Journal
@@ -23,4 +20,4 @@ On email conversations with Walter and Tony, we discussed about a suitable time 
 
 ## Goals for next Week
 
-Hping to learn new things and share some good things I know, this is going to be something new and exciting. Thanks for spending your time reading this. If you find any mistake, typo or grammatical mistake, let me know 
+Hoping to learn new things and share some good things I know, this is going to be something new and exciting. Thanks for spending your time reading this. If you find any mistake, typo or grammatical mistake, let me know

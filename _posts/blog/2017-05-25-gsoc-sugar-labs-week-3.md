@@ -30,9 +30,9 @@ Also a more clear and promising ASLO proposal was released in the mailing list r
 
 <blockquote>
 
-So I cloned the SamToday's repo on digitalocean and ran only the web version and so far it works nicely. It can be accessed here **[url removed for security reasons]**.
+So I cloned the SamToday's repo on digitalocean and ran only the web version and so far it works nicely. It can be accessed here <strong>[url removed for security reasons] </strong>.
 <br>
-I really like that it's written in Flask, makes it easier to navigate between files, since there are few files and directories to look at. I really don't understand the need of using Kafka. It looks it uses a small subset of bundles for demo, which can be viewed at **[url removed for security reasons]**.
+I really like that it's written in Flask, makes it easier to navigate between files, since there are few files and directories to look at. I really don't understand the need of using Kafka. It looks it uses a small subset of bundles for demo, which can be viewed at <strong>[url removed for security reasons] </strong>.
 <br>
 But it doesn't use any database yet, not even Redis for  in-memory storage all the data is cached in memory of the running process.
 
@@ -68,7 +68,7 @@ I have review Sam's code and this is what I've found so far:
 Bot-master is a kafka consumer for the topic "org.sugarlabs.aslo-changes". This topic is different for the one used at [4] (org.sugarlabs.hook). Simplifying, every new topic is a new message bus. As a consumer, it needs to receive some message to process first.
 
 <br>
-<b>My conclusion<b>
+<b>My conclusion</b>
 <br>
 
 After reviewing code, I still believe the proposal I've sent before  is the simplest way to manage this. Of course, maybe we can optimize some stuff along the way. Maybe we can add the chance to upload bundles file (XOs) manually as well, so we don't "remove" devs the chance to upload theirs XOs.

@@ -222,6 +222,6 @@ A solid schema is needed if we we aim to serve users and replace old aslo.
 Only challenge we are yet to decide is the use of Mongoengine's `DynamicDocument and EmbeddedDynamicDocument classes` for storing dynamic documents with dynamic keys, mainly for storing different translations of summary,name and changelogs.
 
 ## Goals for Next Week
-I have GSOC code review this week, so I hope I pass the review (wish me luck ) so I can continue working on aslo-v3 and make it successful.
+I have GSOC code review this week, so I hope I pass the review (wish me luck :smile: ) so I can continue working on aslo-v3 and make it successful.
 
 

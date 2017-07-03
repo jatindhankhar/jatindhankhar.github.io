@@ -68,7 +68,7 @@ for po_file,language_code in zip(po_files,language_codes):
 
 
 pprint(translations)
-{% endhihglight %}
+{% endhighlight %}
 [Here is the gist link](https://gist.github.com/jatindhankhar/d450d86755a39909909c31cece65cc90) which contains code as well as the translation dump in json format.
 Now next thing on the list was storing screenshots and icons. Samuel and I discussed on the possibility on storing images on file system which would require us to maintain dedicated paths for them, also backing up and migrating them would require extra work. We could have used [Mongo's GridFS](https://docs.mongodb.com/manual/core/gridfs/) and [mongoengine supports it as well](http://docs.mongoengine.org/guide/gridfs.html) but [it's not a good thing to do it for small objects (less than 16 MB) instead they can be inserted inside database using the binary type](https://docs.mongodb.com/manual/core/gridfs/#when-to-use-gridfs) , but screenshots can vary in size and we may have outlier where we cross 16 MB limit and `Gridfs` is not a good choice for most small sizes due to chunk overhead and extra database round trips, so easiest way was to offload the images to a third party and idea of hosting on Imgur came up , since it was aslo used in [`aslo-2`](https://github.com/sugarlabs/browse-activity/blob/master/activity/activity.info#L22)
 . Plus Imgur have a nice official python library named [ImugrPython](https://github.com/Imgur/imgurpython) and [API is free to use for non-commercial projects](https://api.imgur.com/#freeusage)

@@ -74,10 +74,10 @@ So each activity points to an array of `ReferenceIDs` which store old releases.
 ### FrontEnd 
 For frontend we decided to use [bootstrap-material-design](https://github.com/FezVrasta/bootstrap-material-design)
 
-A demo [can be viewed here ] (http://aslo.jatindhankhar.in:5000/) 
+A demo [can be viewed here ](http://aslo.jatindhankhar.in:5000/) 
 
 Frontend is in (infancy `frontend` branch). For now  we show activity logo , developers who made that activity, a summary of the activity, categories (which we intend to use as tags) and meta data information like GTK version, license.
-**Each version of a activity gets an unique url which is following format `bundle_id/activity_version`
+Each version of a activity gets an unique url which is following format `bundle_id/activity_version`
 In case demo was inaccessible here are the screenshots
 
 <img src="/images/gsoc-how-aslo-works/index.png" alt="Index Page">

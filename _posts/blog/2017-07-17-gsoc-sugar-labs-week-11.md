@@ -59,7 +59,7 @@ and other for a [failed build](https://github.com/sugarlabs-test/browse-activity
 Samuel pulled an all nighter :night: to fix the screenshots and implement the Model Service architecture, here are [some][http://gorodinski.com/blog/2012/04/14/services-in-domain-driven-design-ddd/] [useful links](https://lostechies.com/jimmybogard/2008/08/21/services-in-domain-driven-design/) on the methodology.
 
 Frontend is finally taking up shape. I am using [bootstrap-material-design](https://github.com/FezVrasta/bootstrap-material-design). 
-A demo [can be viewed here ] (http://aslo.jatindhankhar.in:5000/).
+A demo [can be viewed here ](http://aslo.jatindhankhar.in:5000/).
 Each version of a activity gets an unique url which is following format `bundle_id/activity_version`
 In case demo was inaccessible here are the screenshots
 

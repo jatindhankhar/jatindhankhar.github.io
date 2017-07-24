@@ -8,7 +8,7 @@ comments: true
 description: 'GSOC Suar Labs - Week 11 '
 
 ---
-This is the tenth post in the series of my weekly GSOC Sugar Labs, where I summarize my week of working with [Sugar Labs](https://www.sugarlabs.org) under GSOC.
+This is the eleventh post in the series of my weekly GSOC Sugar Labs, where I summarize my week of working with [Sugar Labs](https://www.sugarlabs.org) under GSOC.
 
 ## Weekly Journal 
 This week Samuel and I refined the image management module, added a communication bot and frontend. 

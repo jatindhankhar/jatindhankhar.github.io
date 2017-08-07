@@ -91,7 +91,7 @@ which was finally replaced by horizontal scroll list/carousel with pill as items
 **Developer Carousel**
 <img src="/images/gsoc-week-14/developer_carousel.png" alt="Developer Carousel">
 
-Developer section was not working on small screens so it get hidden on small (`sm`) and extra small screens (`xs`). 
+Developer section was not working on small screens so now it gets hidden on small (`sm`) and extra small screens (`xs`) so as to ensure smooth UX. 
 Categories were made to look like tags.
 
 ## Goals for Next Week

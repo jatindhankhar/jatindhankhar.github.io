@@ -157,5 +157,5 @@ class TestSimple(object):
 To run the tests I modified the `.travis.yml` to run the tests along with pep8 style check `flake8 && pytest tests/`
 
 ## Goals for Next Week
-This week I intend to focus on writing more sensible tests and writing documentation (maybe using `sphinx`), migrate database of aslo to aslo-v3 and move the server to new VM since my old VM died (DigitalOcean credirs expired :sad:).
+This week I intend to focus on writing more sensible tests and writing documentation (maybe using `sphinx`). Database migration of aslo to aslo-v3 and moving the server to new VM is on the to-do list as well. since my old VM died (DigitalOcean credits expired :disappointed:).
 If you find any typos,mistakes or any other inconsistencies, let me know and I'll fix them.

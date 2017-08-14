@@ -87,7 +87,6 @@ Later list was removed and developer pills were placed inside `sections`.
 
 which was finally replaced by horizontal scroll list/carousel with pill as items. Implementation was inspired by  [https://bootsnipp.com/snippets/featured/carousel-product-cart-slider](https://bootsnipp.com/snippets/featured/carousel-product-cart-slider). 
 
-
 **Developer Carousel**
 <img src="/images/gsoc-week-14/developer_carousel.png" alt="Developer Carousel">
 

@@ -10,7 +10,7 @@ description: 'GSOC Suar Labs - Week 4 '
 ---
 
 This is the fourth post in the series of my weekly GSOC Sugar Labs, where I summarize my week  of working with [Sugar Labs](https://www.sugarlabs.org) under GSOC.
-This post was published little late :sweat_smile: due to the delays on my side, since I had to perform a clean install of my system due to two reasons, I wanted to remove too much cruft that accumulated over time, si
+This post was published little late :sweat_smile: due to the delays on my side, since I had to perform a clean install of my system due to two reasons, I wanted to remove too much cruft that accumulated over time.
 
 ## Weekly Journal
 
@@ -21,7 +21,7 @@ We started working on the ASLO implemetation. A rough sketch of the workflow of 
 When a developer release a new version of an activity on an repo of the [Sugar-Activities](github.com/sugar-activities) Organization a payload is sent to the webhook (which happens to at route /webhook of ASLO).
 ASLO then intiaties a background task via Celery to clone the repo and a docker container (made from a prebuilt image) is launched to bundle the code into .xo file which can then be stored on centralized location from where users can download it. Storage location for bundles can be on the same server where ASLO is running or at a different location (could be a FTP,CDN ).
 I also started using [Zenhub](https://www.zenhub.com) which was suggested to me by Walter for handling issues and tracking progress and so far it's been working fine.
-My repo is [jatindhankhar/aslo-v3] (https://github.com/jatindhankhar/aslo-v3)
+My repo is [jatindhankhar/aslo-v3](https://github.com/jatindhankhar/aslo-v3)
 
 
 ## Goals for next Week

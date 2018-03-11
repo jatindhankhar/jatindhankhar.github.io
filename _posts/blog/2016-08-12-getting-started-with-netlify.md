@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Getting Started with Netlify
-categories: blog/
 excerpt: "Getting Started with Netlify"
 tags: [programming,jekyll,netlify]
 comments: true

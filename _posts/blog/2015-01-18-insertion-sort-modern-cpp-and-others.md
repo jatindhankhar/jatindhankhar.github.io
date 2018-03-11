@@ -1,13 +1,8 @@
 ---
-layout: post
 title: "Insertion Sort, Modern C++ and Others "
-modified:
 categories: blog
-excerpt:
 tags: [programming,algorithms,c++,ruby]
-comments: true
 keywords: programming,algorithms,c++,ruby,haskell,insertion,sort
-date: 2015-01-18T20:20:10+05:30
 description: Implementing Insertion Sort in Modern c++, ruby and haskell
 ---
 

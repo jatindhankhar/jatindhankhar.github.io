@@ -1,13 +1,8 @@
 ---
-layout: post
 title: "Solving Strange Addition Problem Differently "
-modified:
-categories: blog
 excerpt: "How I solved Strange additon problem in a strange way" 
 tags: [hackerearth,c++11,programming]
 keyowrds: hackerearth,c++11,STL,programming 
-comments: true
-date: 2014-11-14T13:25:20+05:30
 ---
 
 Tommorrow is my Operating System practical, going through them I realize that they are not too tough, so gave them a try and moved on. I am not in a mood to study right now, then it hit me why not try competitive programming ( meet my old darling) , so I decided to solve one of the easy problem, it was [Strange additions](http://www.hackerearth.com/problem/algorithm/the-reversed-numbers/). Problem itself was quite easy.

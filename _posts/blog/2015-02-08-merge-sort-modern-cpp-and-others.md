@@ -1,13 +1,10 @@
 ---
-layout: post
 title: "Merge Sort, Modern C++ and Others "
 modified:
 categories: blog/
 excerpt: "Merge Sort and Modern C++"
 tags: [programming,algorithms,c++,ruby]
-comments: true
 description: Implementing Insertion Sort in Modern c++, ruby and haskell
-date: 2015-02-08T19:32:41+05:30
 ---
 
 So this is my second post in implementing and learning (hopefully) some of the fundamentals algorithms

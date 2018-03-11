@@ -1,10 +1,8 @@
 ---
 title: GSOC Sugar Labs - How ASLO Works 
-layout: post
 categories: blog/
 excerpt: 'GSOC Suar Labs - How ASLO Works'
 tags: [programming,sugar labs,gsoc]
-comments: true
 description: 'GSOC Suar Labs - How ASLO Works '
 
 ---

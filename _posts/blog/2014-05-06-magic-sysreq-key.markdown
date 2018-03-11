@@ -1,12 +1,9 @@
 ---
-layout: post
 title: "Magic SysReq key"
 excerpt: "Magical SysReq key "
-comments: true
 categories: blog
 tags: [linux]
 keywords: linux,sysreq,magic,key,kernel,crash
-description: Magical key SysReq 
 ---
 
 While reading through the internet I learned about a magical key **SysReq** for Linux based systems. Well, I first discovered about the SysReq in the LinuxForYou now OSFY .When I first learned about it I was like "Where you have been my whole life ? ". Well before beginning let me show what this magic button looks like 
@@ -30,12 +27,17 @@ Yep!, that seems familiar, it's the same key **PrtScn** which we use to take scr
  On newer kernels (since 2.6.12), it is possible to have a more fine-grained control.On these machines, the number written to /proc/sys/kernel/sysrq can be zero, one, or a number greater than one which is a bitmask indicating which features to allow.
  </blockquote>
  Possible values are :
+
 <ol>
-<li> disable SysRq
-<li>enable SysRq completely
+<li> disable SysRq </li>
+<li>enable SysRq completely </li>
 </ol>
+
+
  Values greater than 1 - bitmask of enabled SysRq functions 
+
 <br>
+
 <ul>
 <li>2 - control of console logging level </li>
 <li>4 - control of keyboard (SAK, unraw) </li>
@@ -53,15 +55,17 @@ Yep!, that seems familiar, it's the same key **PrtScn** which we use to take scr
 This part is also shamelessly copied from Wikipedia 
 A common use of the magic SysRq key is to perform a safe reboot of a Linux computer which has otherwise locked up. This can prevent a fsck being required on reboot and gives some programs a chance to save emergency backups of unsaved work.
 Steps :
- 
- * un**R**aw      (take control of keyboard back from X), 
- * t**E**rminate (send SIGTERM to all processes, allowing them to terminate gracefully), 
- * k**I**ll      (send SIGKILL to all processes, forcing them to terminate immediately), 
- * **S**ync     (flush data to disk), 
- * **U**nmount  (remount all filesystems read-only), 
- * re**B**oot.  (reboots the System) 
- 
- 
+
+
+* un **R** aw      (take control of keyboard back from X), 
+* t **E** rminate (send SIGTERM to all processes, allowing them to terminate gracefully), 
+* k **I** ll      (send SIGKILL to all processes, forcing them to terminate immediately), 
+* **S** ync     (flush data to disk), 
+* **U** nmount  (remount all filesystems read-only), 
+* re **B** oot.  (reboots the System) 
+
+
+
  <blockquote> 
 Hold down the Alt and SysRq (Print Screen) keys.
 While holding them down, type the following keys in order, several seconds apart Computer should reboot.
@@ -86,6 +90,6 @@ Be safe and keep playing around :)
 # References and Further Readings
 
 <ul>
-<li> <a href="http://en.wikipedia.org/wiki/Magic_SysRq_key"> Wikipedia</a>
-<li> <a href="http://www.thegeekstuff.com/2008/12/safe-reboot-of-linux-using-magic-sysrq-key/"> The Geeks Stuff</a>
+<li> <a href="http://en.wikipedia.org/wiki/Magic_SysRq_key"> Wikipedia</a> </li>
+<li> <a href="http://www.thegeekstuff.com/2008/12/safe-reboot-of-linux-using-magic-sysrq-key/"> The Geeks Stuff</a> </li>
 </ul>

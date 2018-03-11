@@ -1,11 +1,7 @@
 ---
-layout: post
 title: "Jekyll's permalink and baseurl issue "
-modified:
-categories: blog/
 excerpt: "Jekyll's permalink and baseurl don't play nice with each other and how to fix it. It all started with my new webcomic section"
 tags: [programming,algorithms,c++,ruby]
-comments: true
 description: Jekyll's permalink and baseurl don't play nice with each other and how to fix it
 ---
 

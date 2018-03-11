@@ -10,10 +10,8 @@ url: https://jatindhankhar.in
 permalink:   /:categories/:title/
 markdown:    kramdown
 highlighter: rouge
-sass:
-  sass_dir: _sass
-  style: compressed
-gems:
+
+plugins:
   - jekyll-sitemap
   - jemoji
   - jekyll-feed
@@ -25,11 +23,30 @@ kramdown:
   toc_levels: 1..6
   enable_coderay: false
 
+theme: minimal-mistakes-jekyll
 
+paginate: 5
+
+defaults:
+  # _posts
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      toc: true
+      toc_label: Table
+
+      
 # Site owner
-owner:
+author:
   name: Jatin Dhankhar
-  avatar: bio-photo.jpg
+  avatar: images/bio-photo.jpg
   bio: "Reader | Coder | Learner."
   email:
   disqus-shortname: weblogofjd
@@ -43,7 +60,7 @@ owner:
     ad-slot:
   bing-verify:
   github: jatindhankhar
-  stackoverflow: http://stackoverflow.com/users/3455743/jatin-dhankhar
+  stackoverflow: 3455743/jatin-dhankhar
   keybase: jatin
   linkedin: jatindhankhar
   xing: #username
@@ -54,10 +71,41 @@ owner:
   foursquare: #username
   steam: #username
   dribbble: #username
-  youtube: #username
+  youtube: jatindhankhar
   soundcloud: #username
   weibo: #username
   flickr: #username
 
+search                   : true # true, false (default)
+search_full_content      : true # true, false (default)
+
+# Comments
+comments:
+  provider: disqus
+  disqus:
+    shortname: weblogofjd
 include: [".htaccess"]
-exclude: ["vendor","lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - Rakefile
+  - README
+  - tmp

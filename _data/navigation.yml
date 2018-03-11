@@ -1,16 +1,18 @@
 # Site navigation links
 
-- title: About
-  url: /about/
+main:
+  - title: About
+    url: /about/
 
-- title: Blog Posts
-  url: /blog/
+  - title: Blog Posts
+    url: /blog/
 
-- title: Articles
-  url: /articles/
+  - title: Articles
+    url: /articles/
 
-- title: Labs
-  url: /labs
+  - title: Labs
+    url: /labs
 
-- title: Comics
-  url: /comics
+  - title: Comics
+    url: /comics  
+    description: Comics I drew

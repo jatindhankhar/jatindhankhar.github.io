@@ -1,12 +1,11 @@
 ---
 title: GSOC Sugar Labs - Week 15
-layout: post
 categories: blog/
 excerpt: 'GSOC Suar Labs - Week 15'
-tags: [programming,sugar labs,gsoc]
-comments: true
-description: 'GSOC Suar Labs - Week 15 '
-
+tags: 
+    -programming
+    -sugar labs
+    -gsoc
 ---
 This is the fifteenth post in the series of my weekly GSOC Sugar Labs, where I summarize my week of working with [Sugar Labs](https://www.sugarlabs.org) under GSOC.
 

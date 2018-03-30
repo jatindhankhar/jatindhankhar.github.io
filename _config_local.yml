@@ -24,9 +24,7 @@ kramdown:
   toc_levels: 1..6
   enable_coderay: false
 
-#theme: minimal-mistakes-jekyll
-
-remote_theme: "mmistakes/minimal-mistakes"
+theme: minimal-mistakes-jekyll
 
 paginate: 5
 

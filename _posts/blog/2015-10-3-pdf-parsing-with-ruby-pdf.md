@@ -3,6 +3,7 @@
 title: "Parsing PDF files with ruby"
 excerpt: "Parsing PDF containing tables using ruby"
 tags: [programming,ruby]
+categories: blog
 description: How to parse PDF containing tables using ruby
 ---
 

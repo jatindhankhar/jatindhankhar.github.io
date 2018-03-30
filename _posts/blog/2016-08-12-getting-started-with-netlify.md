@@ -3,6 +3,7 @@ title: Getting Started with Netlify
 excerpt: "Getting Started with Netlify"
 tags: [programming,jekyll,netlify]
 comments: true
+categories: blog
 description: Getting Started with Netlify
 ---
 

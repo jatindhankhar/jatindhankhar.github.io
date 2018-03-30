@@ -1,12 +1,10 @@
 ---
-layout: post
 title: "Using Hostapd to Create Wi-Fi Hotspot"
 excerpt: "Creating Mobile Friendly hostspot in Ubuntu using hostapd."
 categories: articles
 tags: [hostapd, linux]
-image:
-  feature: wifi_fig.png
-comments: true
+header:
+  overlay_image: /images/wifi_fig.png
 share: true
 ---
 

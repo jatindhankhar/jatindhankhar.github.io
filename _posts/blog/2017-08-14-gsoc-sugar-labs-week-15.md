@@ -1,6 +1,6 @@
 ---
 title: GSOC Sugar Labs - Week 15
-categories: blog/
+categories: blog
 excerpt: 'GSOC Suar Labs - Week 15'
 tags: 
     -programming

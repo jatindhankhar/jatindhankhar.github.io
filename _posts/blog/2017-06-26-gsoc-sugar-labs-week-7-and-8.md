@@ -1,6 +1,6 @@
 ---
 title: GSOC Sugar Labs - Week 7 and 8
-categories: blog/
+categories: blog
 excerpt: 'GSOC Suar Labs - Week 7 and 8 '
 tags: [programming,sugar labs,gsoc]
 description: 'GSOC Suar Labs - Week 7 and 8 '

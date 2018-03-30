@@ -1,6 +1,6 @@
 ---
 title: GSOC Sugar Labs - Week 12
-categories: blog/
+categories: blog
 excerpt: 'GSOC Suar Labs - Week 12'
 tags: [programming,sugar labs,gsoc]
 description: 'GSOC Suar Labs - Week 12 '

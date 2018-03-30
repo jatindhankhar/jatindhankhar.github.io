@@ -1,6 +1,7 @@
 ---
 title: "Solving Strange Addition Problem Differently "
-excerpt: "How I solved Strange additon problem in a strange way" 
+excerpt: "How I solved Strange additon problem in a strange way"
+categories: blog 
 tags: [hackerearth,c++11,programming]
 keyowrds: hackerearth,c++11,STL,programming 
 ---

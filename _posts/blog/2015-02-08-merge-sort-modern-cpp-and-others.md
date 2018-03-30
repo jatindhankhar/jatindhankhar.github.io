@@ -1,7 +1,7 @@
 ---
 title: "Merge Sort, Modern C++ and Others "
 modified:
-categories: blog/
+categories: blog
 excerpt: "Merge Sort and Modern C++"
 tags: [programming,algorithms,c++,ruby]
 description: Implementing Insertion Sort in Modern c++, ruby and haskell

@@ -1,6 +1,6 @@
 ---
 title: "Controlling keyboard leds using Xlib"
-modified:
+categories: blog
 excerpt: "Controlling keyboard leds using Xlib"
 tags: [programming,xlib,keyboard,cpp]
 comments: true

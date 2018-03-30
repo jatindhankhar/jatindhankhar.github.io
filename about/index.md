@@ -1,15 +1,13 @@
 ---
-layout: page
+layout: archive
 title: About 
-tags: [about, Jekyll, theme, responsive]
-modified: 2014-08-08T20:53:07.573882-04:00
-image:
-  feature: cover.jpg
-  credit: Jatin Dhankhar
-  creditlink: https://jatindhankhar.in
+header:
+  overlay_image: /images/cover.jpg
+  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
+  caption: "Photo credit: [**Jatin Dhankhar**](https://jatindhankhar.in)"
 ---
 
-I am Jatin Dhankhar. I like reading, writing about technology mostly. I also cubing, footballs, comics and [drawing silly things](/comics)
+I am Jatin Dhankhar. I like reading, writing about technology mostly. I also like cubing, comics and [drawing silly things](/comics)
 
 ## About website
 

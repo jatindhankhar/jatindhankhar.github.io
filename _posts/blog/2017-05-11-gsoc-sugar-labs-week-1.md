@@ -2,6 +2,7 @@
 title: GSOC Sugar Labs - Week 1
 categories: blog/
 excerpt: 'GSOC Suar Labs - Week 1 '
+categories: blog
 tags: [programming,sugar labs,gsoc]
 description: 'GSOC Suar Labs - Week 1 '
 ---

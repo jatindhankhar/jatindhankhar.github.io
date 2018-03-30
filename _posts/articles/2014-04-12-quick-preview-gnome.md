@@ -1,12 +1,10 @@
 ---
-layout: post
 title: "Quickly Preview files in Gnome"
 excerpt: "How to quickly preview files in Gnome."
 categories: articles
 tags: [gnome, linux]
-image:
-  feature: gnome_fig.png
-comments: true
+header:
+  overlay_image: /images/gnome_fig.png
 share: true
 ---
 

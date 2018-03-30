@@ -1,7 +1,7 @@
 ---
 layout: archive
-permalink: /blog/
-title: "Blog posts I have written"
+permalink: /posts/categories
+title: "Blog posts by Categories"
 author_profile: true
 ---
 
@@ -9,9 +9,8 @@ author_profile: true
 
 {% for category in group_names %}
   {% assign posts = group_items[forloop.index0] %}
-  {% if category == 'blog' %}
+  <h2 id="{{ category | slugify }}" class="archive__subtitle">{{ category }}</h2>
   {% for post in posts %}
     {% include archive-single.html %}
   {% endfor %}
-  {% endif %}
 {% endfor %}

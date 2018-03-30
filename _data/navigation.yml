@@ -4,7 +4,10 @@ main:
   - title: About
     url: /about/
 
-  - title: Blog Posts
+  - title: All Posts 
+    url: /posts/
+      
+  - title: Blog 
     url: /blog/
 
   - title: Articles

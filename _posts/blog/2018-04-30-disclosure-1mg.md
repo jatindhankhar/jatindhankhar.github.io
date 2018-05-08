@@ -20,7 +20,7 @@ While doing subdomain enumeration I found [dmg.1mg.com](https://dmg.1mg.com/html
 While doing subdomain enumeration for [https://www.1mg.com/](https://www.1mg.com/), I came across their in-house Drug Management System  [dmg.1mg.com](https://dmg.1mg.com). By default, page redirects to `login.html`, let's try signing up [https://dmg.1mg.com/html/signup.html](https://dmg.1mg.com/html/signup.html), nope no luck, there is no signup page. 
 
 
-Then I looked at Networks being made, and noticed a GET reuest for `config.json`
+Then I looked at Network requests being made, and noticed a GET reuest for `config.json`
 <img src="/images/disclosure-1mg/network-tab.png">
 and it contained API keys and endpoints.
 Here's what `config.json` contained
@@ -58,7 +58,7 @@ I tried looking for 1mg's bug bounty/security page but there was none, contacted
 
 So I sent them a DM on Twitter and they said to send the report to `care@1mg.com` and they will forward to tech team. 1Mg's customer care was very prompt and supportive :+1:. 
 
-Since Google Custom Search has a paid varaint has a paid variant, this was a financial risk. 
+Since Google Custom Search has a paid varaint , this was a financial risk. 
 5$ for 1000 queries, [which can be done under a minute or two, on a multi threaded system]
 
 1mg fixed the issue by removing and revoking the `GOOGLE_KEY` and `SEARCH_ENGINE_KEY`.

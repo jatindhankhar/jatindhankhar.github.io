@@ -55,9 +55,9 @@ Some tools come under both programming and General to me :)
  * Asdf (Git Install) 
  * Docker `sudo pacman -S docker`
 
- ## Customizing
+## Customizing
 
- ### AUR Helper
+### AUR Helper
  AUR completes Arch. For many years I have been using [yaourt](https://archlinux.fr/yaourt-en) but switched to [yay] (https://github.com/Jguer/yay). 
  Installation is simple 
  
@@ -77,10 +77,10 @@ Some tools come under both programming and General to me :)
  ` yay -Syyu  # Update everything `
 
 
- ### Command Line 
+### Command Line 
  I keep coming back to commnad line for certain tasks, so why not turbocharge it with ~steroids~. 
 
- #### Zsh
+#### Zsh
  Bash is good as well but over the years I have found myself liking zsh more.
  Installing is simple as 
  `sudo pacman -S zsh`
@@ -93,7 +93,8 @@ Some tools come under both programming and General to me :)
 
 
 #### Prezto
- ```zsh
+
+```zsh
  # Launch zsh if you haven't
  zsh
 
@@ -125,7 +126,7 @@ Add useful ~~plugins~~ modules
 If you used `cat hello.txt` earlier then just by typing ca and pressing UP arrow will show previosuly issues command.
 `syntax-highlighting` highlights your command to hint whether the command is valid or not.
 
-``zsh
+```zsh
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \
@@ -143,7 +144,6 @@ zstyle ':prezto:load' pmodule \
 
 
 ##### History Substring Search Config
-```
 # Set the query found color.
  zstyle ':prezto:module:history-substring-search:color' found 'green'
 

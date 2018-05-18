@@ -32,8 +32,8 @@ I followed the installation and was able to gain admin rights to the following s
 <img src="/images/disclosure-hackerearth/wp_installed.png">
 
 Now, this in itself is an issue worth reporting but exploring it within bounds never hurts and helps make the report more worthy.
-Once further exploration, wordpress is used as landing pages for new hackathons. So Hackerearth uses Wordpress extensively and there is always a possiblity that some one re-uses the same password, across many systems.
-Now I needed explore the system without shell access, thankfully, wordpress comes with lots of useful plugins that can be installed, usually they are to provide a convenient way to perform common tasks. 
+One further exploration, it turns out, wordpress is used as landing pages for new hackathons. So Hackerearth uses Wordpress extensively and there is always a possiblity that some one re-uses the same password, across many systems.
+Now I needed to explore the system without shell access, thankfully, wordpress comes with lots of useful plugins that can be installed, usually they provide a convenient way to perform common tasks. 
 
 
 To access Database, I used **Adminer** (which sounds like a malware to mine crypto currency :sweat_smile:) and I was able to explore database for other sub blogs as well, since they all were running on the same system.

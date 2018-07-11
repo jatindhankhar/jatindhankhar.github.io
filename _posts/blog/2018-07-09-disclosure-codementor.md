@@ -1,5 +1,5 @@
 ---
-title: Responsible Disclosure - Code Mentor
+title: Responsible Disclosure - Codementor
 categories: blog
 excerpt: ''
 tags: [programming,netsec]

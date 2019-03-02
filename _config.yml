@@ -12,10 +12,12 @@ markdown:    kramdown
 highlighter: rouge
 
 plugins:
+  - jekyll-paginate
   - jekyll-sitemap
-  - jemoji
+  - jekyll-gist
   - jekyll-feed
-  - jekyll-archives
+  - jemoji
+  - jekyll-include-cache
 
 kramdown:
   auto_ids: true

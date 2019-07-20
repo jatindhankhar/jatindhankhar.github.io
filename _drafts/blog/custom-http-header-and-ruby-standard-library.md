@@ -39,10 +39,35 @@ class ImmutableKey < String
  end
 ```
 
-and using the above key as 
+and using the above key as  follows
 
 ```ruby
 { ImmutableKey.new("api-key"): 'SECRET-KEY' } 
 ```
 
-As per the third party, this started occurring from a particular time and then it occurred to me, the timeline matches perfectly with our rails upgrade from rails 4 to rails 5.  But why did it happen, my first thought was to check for gem version of httparty and even though there was a bump from `.0.14` to `0.17`, further debugging proved that httparty was not the issue and mutation of forms were happening at 
+As per the third party, this started occurring from a particular time and then it occurred to me, the timeline matches perfectly with our rails upgrade from rails 4 to rails 5.  But why did it happen, my first thought was to check for gem version of httparty and even though there was a bump from `.0.14` to `0.17`, further debugging proved that httparty was not the issue and mutation of forms were happening at `Net::HTTP` level. 
+
+[https://github.com/jnunemaker/httparty/blob/99751ac98af929b315c74c2ac0f5ffa09195f7ae/lib/httparty/request.rb#L213](https://github.com/jnunemaker/httparty/blob/99751ac98af929b315c74c2ac0f5ffa09195f7ae/lib/httparty/request.rb#L213 "https://github.com/jnunemaker/httparty/blob/99751ac98af929b315c74c2ac0f5ffa09195f7ae/lib/httparty/request.rb#L213")
+
+    def setup_raw_request
+          @raw_request = http_method.new(request_uri(uri))
+          @raw_request.body_stream = options[:body_stream] if options[:body_stream]
+    
+          if options[:headers].respond_to?(:to_hash)
+            headers_hash = options[:headers].to_hash
+    
+            @raw_request.initialize_http_header(headers_hash)
+            # If the caller specified a header of 'Accept-Encoding', assume they want to
+            # deal with encoding of content. Disable the internal logic in Net:HTTP
+            # that handles encoding, if the platform supports it.
+            if @raw_request.respond_to?(:decode_content) && (headers_hash.key?('Accept-Encoding') || headers_hash.key?('accept-encoding'))
+              # Using the '[]=' sets decode_content to false
+              @raw_request['accept-encoding'] = @raw_request['accept-encoding']
+            end
+          end
+
+specifically this line 
+
+      @raw_request.initialize_http_header(headers_hash
+
+\`

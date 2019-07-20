@@ -17,6 +17,7 @@ One day at work I got an escalation from one of the third-party vendors that all
 
 They wanted the header to be a lower case like `api-key` but we started standing it in upper case `API-KEY`. This should not happen since we had a  patch in place, to handle this situation.
 
+
 ## Little background about HTTP headers and NET::HTTP
 
 As per the RFC, http headers are case-insensitive, which means the destination application should be able to understand both the uppercase and lowercase.
@@ -45,7 +46,28 @@ and using the above key as  follows
 { ImmutableKey.new("api-key"): 'SECRET-KEY' } 
 ```
 
-As per the third party, this started occurring from a particular time and then it occurred to me, the timeline matches perfectly with our rails upgrade from rails 4 to rails 5.  But why did it happen, my first thought was to check for gem version of httparty and even though there was a bump from `.0.14` to `0.17`, further debugging proved that httparty was not the issue and mutation of forms were happening at `Net::HTTP` level.
+As per the third party, this started occurring from a particular time and then it occurred to me, the timeline matches perfectly with our rails upgrade from rails 4 to rails 5. 
+To verify the hunch, I ran the same code again in both rails 4 and rails 5 boxes with HTTParty debug log on and yep, there it was. Headers were being capitalized in new rails boxes.
+
+```bash
+# Rails 4 box
+opening connection to thirdparty.com:443...
+starting SSL for thirdparty.com:443...
+SSL established
+
+<- POST "/endpoint HTTP/1.1\r\napi-key: 'SECRET'
+```
+
+```bash
+# Rails 4 box
+opening connection to thirdparty.com:443...
+starting SSL for thirdparty.com:443...
+SSL established
+
+<- POST "/endpoint HTTP/1.1\r\nAPI-KEY: 'SECRET'
+```
+
+But why did it happen, my first thought was to check for gem version of httparty and even though there was a bump from `.0.14` to `0.17`, further debugging proved that httparty was not the issue and mutation of forms were happening at `Net::HTTP` level.
 
 [https://github.com/jnunemaker/httparty/blob/99751ac98af929b315c74c2ac0f5ffa09195f7ae/lib/httparty/request.rb#L213](https://github.com/jnunemaker/httparty/blob/99751ac98af929b315c74c2ac0f5ffa09195f7ae/lib/httparty/request.rb#L213 "https://github.com/jnunemaker/httparty/blob/99751ac98af929b315c74c2ac0f5ffa09195f7ae/lib/httparty/request.rb#L213")
 
@@ -97,4 +119,38 @@ def each_capitalized
   end
 ```
 
-while ~ruby `2.5` introduced~  some changes
+while ~~ruby~~ `~~2.5~~` ~~introduced~~ this commit [https://github.com/ruby/ruby/commit/1a98f56ae14724611fc8f7c220e470d27f6b57e4](https://github.com/ruby/ruby/commit/1a98f56ae14724611fc8f7c220e470d27f6b57e4 "https://github.com/ruby/ruby/commit/1a98f56ae14724611fc8f7c220e470d27f6b57e4") introduced some changes  to underlying `captialize` method by using `to_s` 
+
+```ruby
+    name.to_s.split(/-/).map {|s| s.capitalize }.join('-')
+```
+
+which caused our ImmutableString class to return a new string object instead an object of ImmutableString class with capitalized frozen
+
+```ruby
+ImmutableKey("new").class # ImmutableKey
+ImmutableKey("new").to_s.class # String
+ImmutableKey("new").to_str.class # String
+
+```
+
+# Fix 
+
+Fix was to make the `to_s` and `to_str` return the `self` so that the returned object is an instance of `ImmutableKey` instead of the base string class
+
+```ruby
+class ImmutableKey < String 
+         def capitalize 
+               self 
+         end 
+         
+         def to_s
+          self 
+         end 
+         
+         alias_method :to_str, :to_s
+ end
+```
+
+
+Debugging the issue was fun though :D

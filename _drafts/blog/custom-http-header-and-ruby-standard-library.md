@@ -18,3 +18,31 @@ One day at work I got an escalation from one of the third-party vendors that all
 They wanted the header to be a lower case like `api-key` but we started standing it in upper case `API-KEY`. This should not happen since we had a  patch in place, to handle this situation.
 
 ## Little background about HTTP headers and NET::HTTP
+
+As per the RFC, http headers are case-insensitive, which means the destination application should be able to understand both the uppercase and lowercase. 
+
+Since for most of the applications, http header is case-insensitive. Ruby's standard networking library NET::HTTP converts every header to uppercase which is not an issue for most of the third party apis. 
+
+Many popular libraries like Httparty use Net::HTTP as backend. 
+
+But sometimes we need to send a particular http header as is, without any modifications. 
+
+To prevent http header keys from being modified by NET::HTTP, I used this solution from [https://calvin.my/posts/force-http-header-name-lowercase](https://calvin.my/posts/force-http-header-name-lowercase "https://calvin.my/posts/force-http-header-name-lowercase")
+
+which worked fine.
+
+```ruby
+class ImmutableKey < String 
+         def capitalize 
+               self 
+         end 
+ end
+```
+
+and using the above key as 
+
+```ruby
+{ ImmutableKey.new("api-key"): 'SECRET-KEY' } 
+```
+
+As per the third party, this started occurring from a particular time and then it occurred to me, the timeline matches perfectly with our rails upgrade from rails 4 to rails 5.  But why did it happen, my first thought was to check for gem version of httparty and even though there was a bump from `.0.14` to `0.17`, further debugging proved that httparty was not the issue and mutation of forms were happening at 

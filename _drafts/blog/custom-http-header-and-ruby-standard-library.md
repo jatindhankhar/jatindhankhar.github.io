@@ -49,7 +49,6 @@ As per the third party, this started occurring from a particular time and then i
 
 [https://github.com/jnunemaker/httparty/blob/99751ac98af929b315c74c2ac0f5ffa09195f7ae/lib/httparty/request.rb#L213](https://github.com/jnunemaker/httparty/blob/99751ac98af929b315c74c2ac0f5ffa09195f7ae/lib/httparty/request.rb#L213 "https://github.com/jnunemaker/httparty/blob/99751ac98af929b315c74c2ac0f5ffa09195f7ae/lib/httparty/request.rb#L213")
 
-
 ```ruby
 def setup_raw_request
           @raw_request = http_method.new(request_uri(uri))
@@ -67,9 +66,14 @@ def setup_raw_request
               @raw_request['accept-encoding'] = @raw_request['accept-encoding']
             end
           end
- ```
- 
- 
- specifically this line
+```
 
- `@raw_request.initialize_http_header(headers_hash`
+specifically this line
+
+`@raw_request.initialize_http_header(headers_hash`
+
+So if `NET::HTTP` why did rails upgrade break it ? 
+
+It was ruby version upgrade, earlier we were using ruby `2.1.3` and with the rails we jumped to ruby `2.5.2` which means standard library also had some changes. 
+
+So let see the diff between of 

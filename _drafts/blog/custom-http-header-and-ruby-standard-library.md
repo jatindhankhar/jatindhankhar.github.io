@@ -72,8 +72,29 @@ specifically this line
 
 `@raw_request.initialize_http_header(headers_hash`
 
-So if `NET::HTTP` why did rails upgrade break it ? 
+So if `NET::HTTP` why did rails upgrade break it ?
 
-It was ruby version upgrade, earlier we were using ruby `2.1.3` and with the rails we jumped to ruby `2.5.2` which means standard library also had some changes. 
+It was ruby version upgrade, earlier we were using ruby `2.1.3` and with the rails we jumped to ruby `2.5.2` which means standard library also had some changes.
 
-So let see the diff between of 
+So let see the diff between of
+
+Older ruby version `2.1.3` had
+
+[https://github.com/ruby/ruby/blob/6d728bdae9de565ad9d0b2fee2d4c2a33c6f4eac/lib/net/http/header.rb#L162]()
+
+```ruby
+def each_capitalized
+    block_given? or return enum_for(__method__)
+    @header.each do |k,v|
+      yield capitalize(k), v.join(', ')
+    end
+  end
+
+  alias canonical_each each_capitalized
+
+  def capitalize(name)
+    name.split(/-/).map {|s| s.capitalize }.join('-')
+  end
+```
+
+while ~ruby `2.5` introduced~  some changes

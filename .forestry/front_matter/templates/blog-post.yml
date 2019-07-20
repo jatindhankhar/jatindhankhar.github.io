@@ -20,3 +20,5 @@ fields:
 - type: text
   name: description
   label: description
+pages:
+- _posts/blog/custom-http-header-and-ruby-standard-library.md

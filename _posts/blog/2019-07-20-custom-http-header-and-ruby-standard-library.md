@@ -15,7 +15,7 @@ description: 'Adventures with using custom http header and how ruby''s NET::HTTP
 
 One day at work I got an escalation from one of the third-party vendors that all the api calls to them were silently getting rejected on their end. They provided the explanation that one of the HTTP header that was used to supplying the api key itself, (let's call it  `API-KEY`)  was being sent incorrectly.
 
-They wanted the header to be a lower case like `api-key` but we started standing it in upper case `API-KEY`. This should not happen since we had a  patch in place, to handle this situation.
+They wanted the header to be a lower case like `api-key` but we started sending it in upper case `API-KEY`. This should not happen since we had a  patch in place, to handle this situation.
 
 ## Little background about HTTP headers and NET::HTTP
 
@@ -60,7 +60,7 @@ SSL established
 ```
 
 ```bash
-# Rails 4 box
+# Rails 5 box
 opening connection to thirdparty.com:443...
 starting SSL for thirdparty.com:443...
 SSL established
@@ -95,11 +95,11 @@ specifically this line
 
 `@raw_request.initialize_http_header(headers_hash`
 
-So if `NET::HTTP` why did rails upgrade break it ?
+So if `NET::HTTP` was the issue here then why did rails upgrade break it ?
 
-It was ruby version upgrade, earlier we were using ruby `2.1.3` and with the rails we jumped to ruby `2.5.2` which means standard library also had some changes.
+It was due to ruby version upgrade, earlier we were using ruby `2.1.3` and with the rails upgrade we jumped to ruby `2.5.2` which means standard library also had some changes.
 
-So let see the diff between of
+So let see the diff between two versions
 
 Older ruby version `2.1.3` had
 
@@ -120,7 +120,7 @@ def each_capitalized
   end
 ```
 
-while ~~ruby~~ `~~2.5~~` ~~introduced~~ this commit [https://github.com/ruby/ruby/commit/1a98f56ae14724611fc8f7c220e470d27f6b57e4](https://github.com/ruby/ruby/commit/1a98f56ae14724611fc8f7c220e470d27f6b57e4 "https://github.com/ruby/ruby/commit/1a98f56ae14724611fc8f7c220e470d27f6b57e4") introduced some changes  to underlying `captialize` method by using `to_s`
+while ~~ruby~~ 2.5 ~~introduced~~ this commit [https://github.com/ruby/ruby/commit/1a98f56ae14724611fc8f7c220e470d27f6b57e4](https://github.com/ruby/ruby/commit/1a98f56ae14724611fc8f7c220e470d27f6b57e4 "https://github.com/ruby/ruby/commit/1a98f56ae14724611fc8f7c220e470d27f6b57e4") introduced some changes  to underlying `captialize` method by using `to_s`
 
 ```ruby
     name.to_s.split(/-/).map {|s| s.capitalize }.join('-')

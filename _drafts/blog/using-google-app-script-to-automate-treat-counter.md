@@ -23,6 +23,8 @@ Treat counter is maintained as a google sheet and contain stats of every team me
 
 Sheet is updated manually by treat committee (this can be automated as well )
 
+![](/images/Screenshot 2019-07-27 at 9.56.27 PM.png)
+
 **_Issue_**
 
 It's possible that people lose track of counter and someone needs to remind the person with pending treats.
@@ -53,8 +55,6 @@ Now there is a big button inside the sheet itself, treat committee can update th
 
 [Google app script  is a  super set of javascript](https://developers.google.com/apps-script/), (ES2015 to be precise ?), so I couldn't use ES6 goodies and syntax sugar.
 
-So this is what I came up with, (code is not organized, this is not how I usually write code :see_no_evil:)
-
 So when green button is clicked. Script does the following
 
 1. Fetches sheet specified by the `SHEET_ID` (usually part of the url itself)
@@ -62,6 +62,10 @@ So when green button is clicked. Script does the following
 3. Filters people having more than 4 missed counts
 4. Sorts them based on their treat pending counter
 5. Posts the result by making a POST call to DingTalk's robot api.
+
+![](/images/Screenshot 2019-07-27 at 9.50.48 PM.png)
+
+So this is what I came up with, (code is not organized, this is not how I usually write code :see_no_evil:)
 
 ```js
 function postTreatData() {
@@ -124,6 +128,6 @@ function postOnGroup(message) {
 }
 ```
 
-Since DingTalk supports only a subset of markdown, I combined several string in markdown to form one big markdown document. If google app script supported ES6, I could have used string interoplation to make it more elegant.
+Since DingTalk supports only a subset of markdown, I combined several string in markdown to form one big markdown document. If google app script supported ES6, I could have used string interpolation to make it more elegant.
 
-
+On the ending note, after writing this one, I am missing more standups than I was attending early :p

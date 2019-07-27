@@ -31,7 +31,7 @@ Even though everyone secretly wants the treat, no one wants to be the one to rem
 
 **_Plan_**
 
-So to secretly remind everyone about the treat, we needed to maintain anonymity and automate the process.
+Secretly remind everyone about the treat and maintain anonymity, automate the process.
 
 ## Solutions
 
@@ -40,7 +40,7 @@ There are many ways to automate this problem
 1. **Daily Cron:** We can use a daily cron to pull the data from sheet using [Google Sheets API](https://developers.google.com/sheets/api/) , parse the data then post it on the group using DingTalk's Robot API.
 
    Since sheet is updated manually, we don't need to post the result everyday but only when someone's treat crosses a certain threshold.
-2. **Reactive Response (kind of):** Since sheet is not updated daily and we need results to be posted only when someone updates the treats pending column, a reactive approach in response to update seems to a step in the right direction
+2. **Reactive Response (kind of):** Since sheet is not updated daily and we need results to be posted only when someone updates the treats pending column, a reactive approach in response to update seems like a step in the right direction
 
    We could have used Google app scripts update trigger but this was also a lot of work and involved handling sudden bursts and rollback of  accidental counter upgrades.
 3. **Using Google Sheet as a web app:**
@@ -61,7 +61,7 @@ So when green button is clicked. Script does the following
 2. Then converts each row and converts it to a object.
 3. Filters people having more than 4 missed counts
 4. Sorts them based on their treat pending counter
-5. Posts the result
+5. Posts the result by making a POST call to DingTalk's robot api.
 
 ```js
 function postTreatData() {
@@ -124,4 +124,6 @@ function postOnGroup(message) {
 }
 ```
 
-Since DingTalk supports a subset of markdown, I combined several string in markdown to form one big markdown document. It google app script supported ES6 string interoplation this would have been more elegant.
+Since DingTalk supports only a subset of markdown, I combined several string in markdown to form one big markdown document. If google app script supported ES6, I could have used string interoplation to make it more elegant.
+
+

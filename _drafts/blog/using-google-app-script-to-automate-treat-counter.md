@@ -11,6 +11,58 @@ description: How I used google sheets with google app script to make a simple we
   app to automate treat counter
 
 ---
+## Problem
+
+At work, my team follows  [daily standup meeting](https://www.scrum-institute.org/Daily_Scrum_Meeting.php "daily standup meetings")  (tries to  :sweat_smile: ). To ensure that people don't miss standup, we maintain a ice cream counter (which is now a generic treat counter)
+
+**_Rule_**
+
+So if someone misses 4 standups, their counter increases by 1 and they need to treat the entire team to decrement the counter.
+
+Treat counter is maintained as a google sheet and contain stats of every team member including their name, counter and other data.
+
+Sheet is updated manually by treat committee (this can be automated as well )
+
+**_Issue_**
+
+It's possible that people lose track of counter and someone needs to remind the person with pending treats.
+
+Even though everyone secretly wants the treat, no one wants to be the one to remind the person with pending treats about the same :laughing: .
+
+**_Plan_**
+
+So to secretly remind everyone about the treat, we needed to maintain anonymity and automate the process.
+
+## Solutions
+
+There are many ways to automate this problem
+
+1. **Daily Cron:** We can use a daily cron to pull the data from sheet using [Google Sheets API](https://developers.google.com/sheets/api/) , parse the data then post it on the group using DingTalk's Robot API.
+
+   Since sheet is updated manually, we don't need to post the result everyday but only when someone's treat crosses a certain threshold.
+2. **Reactive Response (kind of):** Since sheet is not updated daily and we need results to be posted only when someone updates the treats pending column, a reactive approach in response to update seems to a step in the right direction
+
+   We could have used Google app scripts update trigger but this was also a lot of work and involved handling sudden bursts and rollback of  accidental counter upgrades.
+3. **Using Google Sheet as a web app:**
+
+   I decided to go with this approach and tried to use sheet as a quick web app by using utilizing google sheets custom triggers.
+
+Now there is a big button inside the sheet itself, treat committee can update the counters and click on the button to announce the treat counter leader board.
+
+**_Google App Script_**
+
+[Google app script  is a  super set of javascript](https://developers.google.com/apps-script/), (ES2015 to be precise ?), so I couldn't use ES6 goodies and syntax sugar.
+
+So this is what I came up with, (code is not organized, this is not how I usually write code :see_no_evil:)
+
+So when green button is clicked. Script does the following
+
+1. Fetches sheet specified by the `SHEET_ID` (usually part of the url itself)
+2. Then converts each row and converts it to a object.
+3. Filters people having more than 4 missed counts
+4. Sorts them based on their treat pending counter
+5. Posts the result
+
 ```js
 function postTreatData() {
     var sheet = SpreadsheetApp.openById("SHEET_ID");
@@ -71,3 +123,5 @@ function postOnGroup(message) {
 
 }
 ```
+
+Since DingTalk supports a subset of markdown, I combined several string in markdown to form one big markdown document. It google app script supported ES6 string interoplation this would have been more elegant.

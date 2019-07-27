@@ -1,6 +1,6 @@
 ---
 title: Custom Http Header and Ruby Standard Library
-categories: programming
+categories: blog
 excerpt: 'Adventures with using custom http header and how ruby''s NET::HTTP library
   parses it '
 tags:

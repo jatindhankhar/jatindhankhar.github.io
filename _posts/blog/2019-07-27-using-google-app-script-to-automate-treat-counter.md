@@ -1,6 +1,6 @@
 ---
 title: 'Using Google App Script to Automate Treat Counter '
-categories: programming
+categories: blog
 excerpt: How I used google sheets with google app script to make a simple web app
   to automate treat counter
 tags:

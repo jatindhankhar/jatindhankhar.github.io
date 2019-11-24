@@ -21,6 +21,6 @@ fields:
   name: description
   label: description
 pages:
-- _posts/2019-08-04-heisenberg-bug-a-bug-that-happened-in-background-only.md
-- _posts/blog/2019-07-27-using-google-app-script-to-automate-treat-counter.md
+- _posts/blog/migrating-an-active-repo-from-bitbucket-to-github.md
 - _posts/blog/2019-07-20-custom-http-header-and-ruby-standard-library.md
+- _posts/blog/2019-07-27-using-google-app-script-to-automate-treat-counter.md

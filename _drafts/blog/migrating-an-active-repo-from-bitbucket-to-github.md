@@ -34,7 +34,7 @@ Plus the rest of the organisation was already on Github, so it wasn't that hard 
 
 # How?
 
-#### Plan
+### Plan
 
 The first step was to clone the repo from Bitbucket to Github and do periodic syncs.  
 During this whole process, we turned off branch protection for the holy branches (in our case it is `master` and `release`)  
@@ -46,7 +46,7 @@ Branch protection was turned on for the new repository.
 
 Asked developers to use the new repository.
 
-#### Execution
+### Execution
 
 **First clone**
 We followed this guide from Gist to migrate repo [Github Migration guide](https://github.com/aiidateam/aiida-core/wiki/How-to-migrate-from-BitBucket-to-GitHub "https://github.com/aiidateam/aiida-core/wiki/How-to-migrate-from-BitBucket-to-GitHub")

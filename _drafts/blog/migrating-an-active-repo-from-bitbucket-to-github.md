@@ -13,12 +13,12 @@ description: Migrating an active repo with continuous pushes from Bitbucket to G
 
 We needed to migrate a high commit frequency repository that was hosted on Bitbucket to Github.
 
-The repository in question is a tier 1 service powering a critical part of the infrastructure so we needed to minimize the downtime and make sure deployments were not blocked during the migration
+The repository in question is a tier 1 service powering a critical part of the infrastructure so we needed to minimize the downtime (oh, throw in more fancy words, to make it sound important :satisfied: ) and make sure deployments were not blocked during the migration
 
 # Why?
 
-We were using Bitbucket to host the code and it worked fine for basic use cases but we needed to support automated PR reviews to assist the code reviews.  
-There were many features that were available on Github but not Bitbucket
+We were using Bitbucket to host the code and it worked fine for basic use cases but we needed to support automated PR reviews to assist the code reviews and Bitbucket wasn't really playing nice.  
+There were many features that were available on Github but not on Bitbucket
 
 Some of them were
 
@@ -28,7 +28,9 @@ Some of them were
 
 Also, let's just say, Bitbucket's UI wasn't pleasing to many. (_cough_ No native syntax highlighting, and no way to hide comments _cough_)
 
-We are using GoCD as CI pipeline along with [Pronto](https://github.com/prontolabs/pronto "Pronto") and it also didn't support Bitbucket's API properly. So we listed down the reasons why we needed to migrate to Github. Also rest of the organisation was already on Github, so it wasn't that hard to convince people. Overall it was much easier to integrate new stuff with Github's API than to deal with the Bitbucket's API.
+We are using GoCD as CI pipeline along with [Pronto](https://github.com/prontolabs/pronto "Pronto") and it also didn't support Bitbucket's API properly. So we listed down the reasons why we needed to migrate to Github.
+
+ Plus the rest of the organisation was already on Github, so it wasn't that hard to convince people. Overall it was much easier to integrate new stuff with Github's API than to deal with the Bitbucket's API.
 
 # How?
 

@@ -30,17 +30,21 @@ Also, let's just say, Bitbucket's UI wasn't pleasing to many. (_cough_ No native
 
 We are using GoCD as CI pipeline along with [Pronto](https://github.com/prontolabs/pronto "Pronto") and it also didn't support Bitbucket's API properly. So we listed down the reasons why we needed to migrate to Github.
 
- Plus the rest of the organisation was already on Github, so it wasn't that hard to convince people. Overall it was much easier to integrate new stuff with Github's API than to deal with the Bitbucket's API.
+Plus the rest of the organisation was already on Github, so it wasn't that hard to convince people. Overall it was much easier to integrate new stuff with Github's API than to deal with the Bitbucket's API.
 
 # How?
 
 #### Plan
 
 The first step was to clone the repo from Bitbucket to Github and do periodic syncs.  
-During this whole process, we turned off branch protection for your holy branch (in our case it is `master` and `release`)  
-Once a clone of the code was made, we then tested our pipelines and deployments on one of the staging environments.  
+During this whole process, we turned off branch protection for the holy branches (in our case it is `master` and `release`)  
+Once a clone of the code was made, we then tested our pipelines for (package building and deployments) on one of the staging environments.  
 After that it was just syncing the new repository periodically with new commits and once we were confident that it will work.  
-Disabled writes to the old repository, asked developers to use the new repository and disable writes on the old one.
+ Writes were disabled to the old repository. 
+
+Branch protection was turned on for the new repository.
+
+Asked developers to use the new repository.
 
 #### Execution
 

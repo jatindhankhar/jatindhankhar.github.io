@@ -136,3 +136,9 @@ end
 It returns the original response if there was no authentication error.
 
 Otherwise it attempts to refresh the token and retry the original request, until retry threshold is reached.
+
+
+
+*Is there a better to do it ? I would love to know more and improve the implementation.*
+
+

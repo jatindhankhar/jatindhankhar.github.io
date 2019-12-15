@@ -29,6 +29,7 @@ The verification call was wrapped in a proc, so that it be can be passed around.
  If  the request returned 401, unauthorised, we could regenerate the token and retry the original request.
  
  ```ruby
+ 
  class APIClient
 
     class RefreshTokenError < Exception
@@ -60,7 +61,7 @@ The verification call was wrapped in a proc, so that it be can be passed around.
       raise RefreshTokenError
     end
 
-    def validate_bank_details(query)
+    def validate_details(query)
       request_call = Proc.new {HTTParty.get(validation_endpoint, query: query, headers: token_headers, timeout: 12)}
       refresh_and_execute(request_call)
     end
@@ -108,3 +109,5 @@ The verification call was wrapped in a proc, so that it be can be passed around.
     end
   end
  ```
+ 
+ The 

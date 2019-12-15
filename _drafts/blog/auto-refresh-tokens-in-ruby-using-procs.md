@@ -22,8 +22,6 @@ So the service had an api which can be used to verify those details (Obviously :
 
 # How ?
 
-So we had to auto refresh token after certain intervals without causing any failures for the end user and that sometimes could happen in middle of the actual verification call.
-
 We needed to handle the refresh of the token gracefully without impacting the original request.
 
 The verification call was wrapped in a proc, so that it be can be passed around.

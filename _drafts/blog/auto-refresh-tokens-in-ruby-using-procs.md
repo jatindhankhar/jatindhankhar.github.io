@@ -26,7 +26,9 @@ We needed to handle the refresh of the token gracefully without impacting the or
 
 The verification call was wrapped in a proc, so that it be can be passed around.
 
-If  the request returned 401, unauthorised, we could regenerate the token and retry the original request.
+If  the request returned 401, unauthorised, we could regenerate the token and retry the original request.  
+  
+This is what I came up with 
 
 ```ruby
 
@@ -62,7 +64,7 @@ class APIClient
    end
 
    def validate_details(query)
-     request_call = Proc.new {HTTParty.get(validation_endpoint, query: query, headers: token_headers, timeout: 12)}
+     request_call = Proc.new {HTTParty.get(validation_endpoint, query: query, headers: token_headers, timeout: 2)}
      refresh_and_execute(request_call)
    end
 
@@ -110,7 +112,13 @@ class APIClient
  end
 ```
 
-The main magic (or just plain logic :sweat_smile) happens in this
+and using it like this 
+
+```ruby
+APIClient.new.validate_details(query).parsed_response
+```
+
+The magic (or just plain logic :sweat_smile) happens in `refresh_and_execute`
 
 ```ruby
 

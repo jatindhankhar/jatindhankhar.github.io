@@ -14,7 +14,7 @@ description: Auto refresh API tokens seamlessly in ruby using procs.
 Few months ago I had to integrate a third party service into our system.  
 The third party in question was used in a dashboard to verify certain details of users.
 
-So in an ideal world, the end user just clicks on verify and our system handles rest of the stuff (like it should). 
+So in an ideal world, the end user just clicks on verify and our system handles rest of the stuff (like it should).
 
 So the service had an api which can be used to verify those details (Obviously :smile:) but it used a refresh token which expired every 15 minutes.
 
@@ -26,9 +26,9 @@ We needed to handle the refresh of the token gracefully without impacting the or
 
 The verification call was wrapped in a proc, so that it be can be passed around.
 
-If  the request returned unauthorised access, we could regenerate the token and retry the original request.  
-  
-This is what I came up with 
+If  the request returned unauthorised access, we could regenerate the token and retry the original request.
+
+This is what I came up with
 
 ```ruby
 
@@ -112,13 +112,13 @@ class APIClient
  end
 ```
 
-and using it like this 
+and using it like this
 
 ```ruby
 APIClient.new.validate_details(query).parsed_response
 ```
 
-The magic (or just plain logic :sweat_smile) happens in `refresh_and_execute`
+The magic (or just plain logic :sweat_smile: ) happens in `refresh_and_execute`
 
 ```ruby
 
@@ -137,8 +137,4 @@ It returns the original response if there was no authentication error.
 
 Otherwise it attempts to refresh the token and retry the original request, until retry threshold is reached.
 
-
-
-*Is there a better to do it ? I would love to know more and improve the implementation.*
-
-
+_Is there a better to do it ? I would love to know more and improve the implementation._

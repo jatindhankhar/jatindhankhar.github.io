@@ -113,6 +113,7 @@ The verification call was wrapped in a proc, so that it be can be passed around.
  The main magic (or just plain logic :sweat_smile) happens in this 
 
 ```ruby
+
 def refresh_and_execute(request)
       response = request.call
       return response if auth_success?(response)
@@ -123,5 +124,7 @@ def refresh_and_execute(request)
       raise RefreshTokenError
 end
 ```    
+
+
 It returns the original resposne if there was not authentication error, otherwise attempts to refresh the token and re-try the original request, until retry threshold is reached. 
 

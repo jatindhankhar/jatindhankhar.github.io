@@ -26,7 +26,7 @@ We needed to handle the refresh of the token gracefully without impacting the or
 
 The verification call was wrapped in a proc, so that it be can be passed around.
 
-If  the request returned 401, unauthorised, we could regenerate the token and retry the original request.  
+If  the request returned unauthorised access, we could regenerate the token and retry the original request.  
   
 This is what I came up with 
 

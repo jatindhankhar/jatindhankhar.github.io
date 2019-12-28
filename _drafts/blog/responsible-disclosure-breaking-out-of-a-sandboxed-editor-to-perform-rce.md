@@ -11,8 +11,10 @@ description: Breaking out of a Sandboxed Editor of an online platform to perform
 ---
 # tl;dr
 
-Found a way to escape the sandboxed editor to perform Remote Code Execution leading which lead to ability to view AWS credentials, ssl certificate, passwd files.  
-Pretty much owning the entire machine
+Found a way to escape the sandboxed editor to perform Remote Code Execution which lead to the ability to view AWS credentials, ssl certificate and other stuff.
+  
+Pretty much owning the entire machine :smiling_imp:
+
 
 # Story - Finding the issue
 
@@ -21,7 +23,11 @@ So, let me give you one.
 
 While doing recon I found many sub-domains and ip addresses belonging to Hackerearth, one of them was [https://18.140.198.247/#/home/node/he-theia/sandbox](https://18.140.198.247/#/home/node/he-theia/sandbox) which was running an online ide built on top of vs-code named  [Theia IDE](https://theia-ide.org/ "https://theia-ide.org/").
 
-At first glance, it looked pretty boring, after all it'a a IDE running in a browser (wait, that's normal since most of them are electron based :|) So, anyways, I played around with it for a while, the ultimated goal was to execute random code on the machine. But, they removed the terminal view from the IDE shortcuts and menu. So, I tried to "run" the code file but that opened was also not available. Then poking around I tried "Run selected text" by bringing up the global action menu shortcut from vscode (ctrl/cmd + shift + p) and lo, and behold, it opened up a terminal.
+At first glance, it looked pretty boring, after all it's an IDE running in a browser (wait, that's normal since most of them are electron based :|) 
+
+So, anyways, I played around with it for a while, the ultimated goal was to execute random code on the machine. But, they removed the terminal view command from the IDE shortcuts and menu. So, I tried to "run" the code file but that option was also not available. 
+
+Then poking around I tried "Task: Run selected text" by bringing up the global action menu shortcut from vscode (ctrl/cmd + shift + p) and lo, and behold, it opened up a terminal.
 <img src="/images/disclosure-hackerearth/run_selected_text_prompt.png">
 
 One I got the terminal access, it was easy to demonstrate the RCE.
@@ -31,14 +37,15 @@ One I got the terminal access, it was easy to demonstrate the RCE.
 
 ### Trying out things
 
-I tried with the possibility of reading system config files and was able to read HackearEarth's private ssl `.crt` and `.key` files. Their `/etc/passwd` files. Pretty much most of the files. 
+I tried with the possibility of reading system config files and was able to read HackearEarth's private ssl `.crt` and `.key` files.
+Pretty much, most of the system configuration files. 
 
 <img src="/images/disclosure-hackerearth/ssl_certificates.png">
 
 <img src="/images/disclosure-hackerearth/ssl_private_key.png">
 
 
-I was even able to read the git log and original `ide_fetcher.py` that powered the ide initial startup commands.
+I was even able to read the git log and original `ide_fetcher.py` that powered the ide initial startup commands since the repo cloned still had git metadata.
 
 <img src="/images/disclosure-hackerearth/git_config.png">
 
@@ -54,12 +61,14 @@ Through some command line fu, I was able to read the original arguments used to 
 
 
 ### Reading AWS Credentials
-After it was clear that I was able to read system files, write arbitary files and command, I wanted to see if it's possible to use the terminal to read AWS credentails, since the instance was hosted on aws infrastruture just like rest of the HackerEarth's infrastruture.
+After it was clear that I was able to read system files, write arbitary files and command, I wanted to see if it was possible to use the terminal to read AWS credentails, since the instance was hosted on aws infrastruture just like rest of the HackerEarth's infrastruture.
 
 I first tried the usual metadata url to access aws details 
 
 `curl http://169.254.169.254/latest/api/token` but it didn't work instead it gave me `curl: failed to connect`.
-Lost, it tried to ping the domain that didn't work. Then I found a blog by Puma Scan on [Cloud Security - Attacking The Metadata Service](https://pumascan.com/resources/cloud-security-instance-metadata/)
+
+
+Lost, it tried to ping the domain that also didn't work. Then I found a blog by Puma Scan on [Cloud Security - Attacking The Metadata Service](https://pumascan.com/resources/cloud-security-instance-metadata/)
 
 There it was mentioned that attacking ECS metadata was different from attacking EC2 metadata service, since it was served from a different domain. 
 Then I checked the environment variable output again which I ignored earlier for some reason :sweat_smile: and it was right there in front of my eyes the whole time. 
@@ -68,6 +77,7 @@ Then I checked the environment variable output again which I ignored earlier for
 
 It contained both the `ECS_CONTAINER_METADATA_URI` and `AWS_CONTAINER_CREDENTIALS_RELATIVE_URI`
 
+After that it was just a `curl` away :smile:
 
 <img src="/images/disclosure-hackerearth/aws_metadata.png">
 

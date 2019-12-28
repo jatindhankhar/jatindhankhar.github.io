@@ -77,3 +77,16 @@ It contained both the `ECS_CONTAINER_METADATA_URI` and `AWS_CONTAINER_CREDENTIAL
 
 # Timeline 
 
+* Tue, Dec 24 [ 7:35 PM IST] - Reached out to HackerEarth support about the issue
+
+* Wed, Dec 25 [ 9:50 AM IST] - HackerEarth support team asked to submit the issue to them so that they can forward it to security team (Although I wanted to report it directly to security team)
+
+< Back and forth regarding submission >
+
+* Wed, Dec 25, 2019 [ 10:25 PM IST ] - Submitted the issue along with detailed POC and evidence
+
+* Thu, Dec 26, 2019 [ 5:49 PM IST ] - The instance was down. Asked HackerEarth for the confirmation of the fix. 
+
+* Fri, Dec 27, 2019 [ 12:57 PM IST] - HackerEarth confirmed the fix from their end. 
+
+< Bounty discussions in progress >

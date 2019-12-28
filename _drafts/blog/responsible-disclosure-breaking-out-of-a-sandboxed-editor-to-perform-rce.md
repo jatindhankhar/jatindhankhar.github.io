@@ -28,3 +28,52 @@ One I got the terminal access, it was easy to demonstrate the RCE.
 
 <img src="/images/disclosure-hackerearth/terminal_prompt.png">
 
+
+### Trying out things
+
+I tried with the possibility of reading system config files and was able to read HackearEarth's private ssl `.crt` and `.key` files. Their `/etc/passwd` files. Pretty much most of the files. 
+
+<img src="/images/disclosure-hackerearth/ssl_certificates.png">
+
+<img src="/images/disclosure-hackerearth/ssl_private_key.png">
+
+
+I was even able to read the git log and original `ide_fetcher.py` that powered the ide initial startup commands.
+
+<img src="/images/disclosure-hackerearth/git_config.png">
+
+<img src="/images/disclosure-hackerearth/git_log.png">
+
+
+Through some command line fu, I was able to read the original arguments used to invoke the web-ide.
+
+<img src="/images/disclosure-hackerearth/command_line_arguments.png">
+
+
+
+
+
+### Reading AWS Credentials
+After it was clear that I was able to read system files, write arbitary files and command, I wanted to see if it's possible to use the terminal to read AWS credentails, since the instance was hosted on aws infrastruture just like rest of the HackerEarth's infrastruture.
+
+I first tried the usual metadata url to access aws details 
+
+`curl http://169.254.169.254/latest/api/token` but it didn't work instead it gave me `curl: failed to connect`.
+Lost, it tried to ping the domain that didn't work. Then I found a blog by Puma Scan on [Cloud Security - Attacking The Metadata Service](https://pumascan.com/resources/cloud-security-instance-metadata/)
+
+There it was mentioned that attacking ECS metadata was different from attacking EC2 metadata service, since it was served from a different domain. 
+Then I checked the environment variable output again which I ignored earlier for some reason :sweat_smile: and it was right there in front of my eyes the whole time. 
+
+<img src="/images/disclosure-hackerearth/env_output.png">
+
+It contained both the `ECS_CONTAINER_METADATA_URI` and `AWS_CONTAINER_CREDENTIALS_RELATIVE_URI`
+
+
+<img src="/images/disclosure-hackerearth/aws_metadata.png">
+
+
+<img src="/images/disclosure-hackerearth/aws_creds.png">
+
+
+# Timeline 
+

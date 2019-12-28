@@ -25,7 +25,7 @@ While doing recon I found many sub-domains and ip addresses belonging to Hackere
 
 At first glance, it looked pretty boring, after all it's an IDE running in a browser (wait, that's normal since most of them are electron based :|) 
 
-So, anyways, I played around with it for a while, the ultimated goal was to execute random code on the machine. But, they removed the terminal view command from the IDE shortcuts and menu. So, I tried to "run" the code file but that option was also not available. 
+So, anyways, I played around with it for a while, the ultimate goal was to execute random code on the machine. But, they removed the terminal view command from the IDE shortcuts and menu. So, I tried to "run" the code file but that option was also not available. 
 
 Then poking around I tried "Task: Run selected text" by bringing up the global action menu shortcut from vscode (ctrl/cmd + shift + p) and lo, and behold, it opened up a terminal.
 <img src="/images/disclosure-hackerearth/run_selected_text_prompt.png">
@@ -68,7 +68,7 @@ I first tried the usual metadata url to access aws details
 `curl http://169.254.169.254/latest/api/token` but it didn't work instead it gave me `curl: failed to connect`.
 
 
-Lost, it tried to ping the domain that also didn't work. Then I found a blog by Puma Scan on [Cloud Security - Attacking The Metadata Service](https://pumascan.com/resources/cloud-security-instance-metadata/)
+Lost, I tried to ping the domain that also didn't work. Then I found a blog by Puma Scan on [Cloud Security - Attacking The Metadata Service](https://pumascan.com/resources/cloud-security-instance-metadata/)
 
 There it was mentioned that attacking ECS metadata was different from attacking EC2 metadata service, since it was served from a different domain. 
 Then I checked the environment variable output again which I ignored earlier for some reason :sweat_smile: and it was right there in front of my eyes the whole time. 

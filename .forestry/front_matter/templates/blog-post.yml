@@ -25,3 +25,4 @@ pages:
 - _posts/blog/2019-07-27-using-google-app-script-to-automate-treat-counter.md
 - _posts/blog/2019-12-01-migrating-an-active-repo-from-bitbucket-to-github.md
 - _posts/blog/2019-12-15-auto-refresh-tokens-in-ruby-using-procs.md
+- _posts/blog/responsible-disclosure-breaking-out-of-a-sandboxed-editor-to-perform-rce.md

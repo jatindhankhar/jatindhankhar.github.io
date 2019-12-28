@@ -21,7 +21,7 @@ Pretty much owning the entire machine :smiling_imp:
 If you are still here after reading the tl;dr, I guess you are here for the story ?  
 So, let me give you one.
 
-While doing recon I found many sub-domains and ip addresses belonging to Hackerearth, one of them was [https://18.140.198.247/#/home/node/he-theia/sandbox](https://18.140.198.247/#/home/node/he-theia/sandbox) which was running an online ide built on top of vs-code named  [Theia IDE](https://theia-ide.org/ "https://theia-ide.org/").
+While doing recon I found many sub-domains and ip addresses belonging to Hackerearth, one of them was [https://[REDACTED]/#/home/node/he-theia/sandbox](https://[READACTED]/#/home/node/he-theia/sandbox) which was running an online ide built on top of vs-code named  [Theia IDE](https://theia-ide.org/ "https://theia-ide.org/").
 
 At first glance, it looked pretty boring, after all it's an IDE running in a browser (wait, that's normal since most of them are electron based :|) 
 

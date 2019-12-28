@@ -9,19 +9,22 @@ comments: true
 description: Breaking out of a Sandboxed Editor of an online platform to perform RCE.
 
 ---
-# tl;dr 
+# tl;dr
 
-Found a way to escape the sandboxed editor to perform Remote Code Execution leading which lead to ability to view AWS credentials, ssl certificate, passwd files.   
-Pretty much owning the entire machine 
+Found a way to escape the sandboxed editor to perform Remote Code Execution leading which lead to ability to view AWS credentials, ssl certificate, passwd files.  
+Pretty much owning the entire machine
 
 # Story - Finding the issue
 
-If you are still here after reading the tl;dr, I guess you are here for the story ?   
-So, let me give you one.   
-  
+If you are still here after reading the tl;dr, I guess you are here for the story ?  
+So, let me give you one.
+
 While doing recon I found many sub-domains and ip addresses belonging to Hackerearth, one of them was [https://18.140.198.247/#/home/node/he-theia/sandbox](https://18.140.198.247/#/home/node/he-theia/sandbox) which was running an online ide built on top of vs-code named  [Theia IDE](https://theia-ide.org/ "https://theia-ide.org/").
 
-At first glance, it looked pretty boring, after all it'a a IDE running in a browser (wait, that's normal since most of them are electron based :|) 
-So, anyways, I played around with it for a while, the ultimated goal was to execute random code on the machine. But, they removed the terminal view from the IDE shortcuts and menu. 
-So, I tried to "run" the code file but that opened was also not available.
-Then poking around I tried "Run 
+At first glance, it looked pretty boring, after all it'a a IDE running in a browser (wait, that's normal since most of them are electron based :|) So, anyways, I played around with it for a while, the ultimated goal was to execute random code on the machine. But, they removed the terminal view from the IDE shortcuts and menu. So, I tried to "run" the code file but that opened was also not available. Then poking around I tried "Run selected text" by bringing up the global action menu shortcut from vscode (ctrl/cmd + shift + p) and lo, and behold, it opened up a terminal.
+<img src="/images/disclosure-hackerearth/run_selected_text_prompt.png">
+
+One I got the terminal access, it was easy to demonstrate the RCE.
+
+<img src="/images/disclosure-hackerearth/terminal_prompt.png">
+

@@ -86,4 +86,4 @@ After that, it was just a `curl` away :smile:
 * Fri, Dec 27, 2019 \[ 12:57 PM IST\] - HackerEarth confirmed the fix from their end.
 * Mon, Jan 13, 2020 \[12:32 PM IST\] - Bounty Awarded
 * Thu, Jan 23, 2020 \[4:21 PM IST\] - Bounty received
-* Thu, Jan 23, 202 \[23:05 PM IST\] - Disclosure draft shared
+* Thu, Jan 23, 2020 \[11:10 PM IST\] - Disclosure draft shared

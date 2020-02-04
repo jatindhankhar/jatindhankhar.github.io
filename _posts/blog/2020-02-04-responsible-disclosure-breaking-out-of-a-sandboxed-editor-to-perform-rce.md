@@ -22,7 +22,7 @@ So, let me give you one.
 
 While doing recon I found many sub-domains and IP addresses belonging to HackerEarth, one of them was [https://\[REDACTED\]/#/home/node/he-theia/sandbox](https://\[READACTED\]/#/home/node/he-theia/sandbox) which was running an online ide built on top of vs-code named  [Theia IDE](https://theia-ide.org/ "https://theia-ide.org/").
 
-At first glance, it looked pretty boring, after all, it's an IDE running in a browser (wait, that's normal since most of them are electron based :|)
+At first glance, it looked pretty boring, after all, it's an IDE running in a browser (wait, that's normal since most of them are electron based :neutral_face: )
 
 So, anyway, I played around with it for a while, the ultimate goal was to execute random code on the machine. But, they removed the terminal view command from the IDE shortcuts and menu. So, I tried to "run" the code file but that option was also not available.
 

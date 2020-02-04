@@ -88,4 +88,4 @@ After that, it was just a `curl` away :smile:
 * Thu, Jan 23, 2020 \[4:21 PM IST\] - Bounty received
 * Thu, Jan 23, 2020 \[11:10 PM IST\] - Disclosure draft shared
 * Tue, Feb 04, 2020 \[06:03 PM IST\] - Disclosure draft approved
-* Tue, Feb 04, 202 \[06:25 PM IST\] - Blog published
+* Tue, Feb 04, 2020 \[06:25 PM IST\] - Blog published

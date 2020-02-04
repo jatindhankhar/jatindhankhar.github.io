@@ -82,8 +82,10 @@ After that, it was just a `curl` away :smile:
 < Back and forth regarding submission >
 
 * Wed, Dec 25, 2019 \[ 10:25 PM IST \] - Submitted the issue along with detailed POC and evidence
-* Thu, Dec 26, 2019 \[ 5:49 PM IST \] - The instance was down. I asked HackerEarth for the confirmation of the fix.
+* Thu, Dec 26, 2019 \[ 05:49 PM IST \] - The instance was down. I asked HackerEarth for the confirmation of the fix.
 * Fri, Dec 27, 2019 \[ 12:57 PM IST\] - HackerEarth confirmed the fix from their end.
 * Mon, Jan 13, 2020 \[12:32 PM IST\] - Bounty Awarded
 * Thu, Jan 23, 2020 \[4:21 PM IST\] - Bounty received
 * Thu, Jan 23, 2020 \[11:10 PM IST\] - Disclosure draft shared
+* Tue, Feb 04, 2020 \[06:03 PM IST\] - Disclosure draft approved
+* Tue, Feb 04, 202 \[06:30 PM IST\] - Blog published
